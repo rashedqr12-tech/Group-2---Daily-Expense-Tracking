@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Daily Expense Tracking"
+description = "An Arabic-first Saudi Riyal expense tracker with halala-precise calculations, daily budget quota feedback, quick-add spending, and persistent local history."
+version = "1.0.0"
+id = "artifacts/daily-expense-tracking"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18681
+
+[services.development]
+run = "pnpm --filter @workspace/daily-expense-tracking run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/daily-expense-tracking", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/daily-expense-tracking/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18681"
+BASE_PATH = "/"
