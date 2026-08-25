@@ -18,8 +18,9 @@
 
 ## Program Used
 
-Replit
+Replit Agent
 
-## Project
+## Project Name 
+### Daily Expense Tracking]
 
-[Daily Expense Tracking](https://daily-expense-tracking--d7m1591.replit.app)
+- (https://daily-expense-tracking--d7m1591.replit.app)
